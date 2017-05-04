@@ -1,0 +1,30 @@
+import React ,{Component} from 'react';
+import {AppRegistry,Text,View,StyleSheet} from 'react-native';
+
+class MyName extends Component{
+    render(){
+        return (
+            <Text style={styles.txtName,{color:this.props.color}} >Hello,I`m {this.props.name}</Text>
+        )
+    }
+}
+class Hello3 extends Component{
+    render(){
+        return(
+            <View style={styles.txtWrap}>
+                <MyName name="高端黑" color="black" />
+                <MyName name="东北银" color="gray"  />
+                <MyName name="茶婊绿" color="green" />
+                <MyName name="武藤蓝" color="blue"  />
+                <MyName name="脑残粉" color="pink"  />
+            </View>
+        )
+    }
+}
+let styles=StyleSheet.create({
+    txtWrap:{flex:1,alignItems:'center', justifyContent: 'center'},
+    txtName:{fontSize:24,color:'#00f',fontWeight:'bold',}
+})
+
+// 注意，这里用引号括起来的'Project0503'必须和你init创建的项目名一致
+AppRegistry.registerComponent('Project0503', () => Hello3);
