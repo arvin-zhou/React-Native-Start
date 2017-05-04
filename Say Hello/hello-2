@@ -1,0 +1,18 @@
+import React ,{Component} from 'react';
+import {AppRegistry,Text,View,StyleSheet} from 'react-native';
+
+class Hello2 extends Component{
+    render(){
+        return(
+            <View style={{flex:1,alignItems:'center', justifyContent: 'center'}}>
+                <Text style={styles.txt1}>hello world!</Text>
+            </View>
+        )
+    }
+}
+let styles=StyleSheet.create({
+    txt1:{fontSize:24,color:'#00f',fontWeight:'bold',}
+})
+
+// 注意，这里用引号括起来的'Project0503'必须和你init创建的项目名一致
+AppRegistry.registerComponent('Project0503', () => Hello2);
