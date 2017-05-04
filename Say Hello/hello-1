@@ -1,0 +1,13 @@
+import React ,{Component} from 'react';
+import {AppRegistry,Text} from 'react-native';
+
+class Hello1 extends Component{
+    render(){
+        return(
+            <Text>Hello World!</Text>
+        )
+    }
+}
+
+// 注意，这里用引号括起来的'Project0503'必须和你init创建的项目名一致
+AppRegistry.registerComponent('Project0503', () => Hello1);
