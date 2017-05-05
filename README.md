@@ -1,2 +1,2 @@
 # React-Native-Start
-React-Native-Start小白攻略
+React-Native-Start学习线路导航（从入门到精通）
