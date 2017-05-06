@@ -18,6 +18,8 @@ export default class TelphoneNum extends Component {
       this.state = {
         telNumber:'',
       };
+       //绑定回调函数和方法
+       this.updateBox=this.updateBox.bind(this);
     }
     updateBox(newTxt){
         this.setState(()=>{
