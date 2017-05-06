@@ -1,0 +1,91 @@
+import React, { Component } from 'react';
+import {
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    TextInput
+} from 'react-native';
+
+let Dimensions = require('Dimensions');//加载尺寸模块
+let totalWidth = Dimensions.get('window').width;//获取设备宽度
+let boxWidth = totalWidth * 0.6;
+
+export default class TelphoneNum extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            telNumber:'',
+            telNumber2:''
+        };
+        //绑定回调函数和方法
+        this.updateBox=this.updateBox.bind(this);
+        this.updateBox2=this.updateBox2.bind(this);
+}
+    updateBox(newTxt){
+        this.setState(()=>{
+            return{
+                telNumber:newTxt
+            }
+        })
+    }
+    updateBox2(newTxt){
+        this.setState(()=>{
+            return{
+                telNumber2:newTxt
+            }
+        })
+    }
+    render(){
+        let display = this.state.telNumber == this.state.telNumber2 ? '你的手机号是:'+this.state.telNumber : '请确认手机号！';
+        return(
+            <View style={styles.container}>
+                <TextInput style={styles.writeBox} placeholder="输入手机号" onChangeText={(newTxt) => this.updateBox(newTxt)}/>
+                <TextInput style={styles.writeBox} placeholder="确认手机号" onChangeText={this.updateBox2}/>
+                <Text style={styles.showBox}>{display}</Text>
+            </View>
+        );
+    }
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        justifyContent:'center',
+        alignItems:'center',
+        textAlign:'center'
+    },
+    writeBox:{
+        width:boxWidth,
+        height:30,
+        color:'white',
+        backgroundColor:'#cde6c7',
+        borderStyle:'solid',
+        borderWidth:1,
+        borderColor:'#74905d',
+        marginBottom:15,
+        borderRadius:10,
+        overflow:'hidden',
+        paddingLeft:10,
+        alignSelf: 'center',
+
+    },
+    showBox:{
+        width:boxWidth,
+        height:30,
+        fontSize:14,
+        color:'#2a5caa',
+        backgroundColor:'#cde6c7',
+        textAlign:'center',
+        alignItems:'center',
+        lineHeight:30,
+        borderStyle:'solid',
+        borderWidth:1,
+        borderColor:'#74905d',
+        borderRadius:10,
+        overflow:'hidden',
+        alignSelf: 'center',
+    }
+});
+
+AppRegistry.registerComponent('Project0503', () => TelphoneNum);
