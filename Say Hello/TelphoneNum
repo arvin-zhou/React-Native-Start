@@ -8,7 +8,7 @@ import {
   TextInput
 } from 'react-native';
 
-let Dimensions = require('Dimensions');//加载尺寸模块
+let Dimensions = require('Dimensions');//加载尺寸模块API
 let totalWidth = Dimensions.get('window').width;//获取设备宽度
 let boxWidth = totalWidth * 0.6;
 
