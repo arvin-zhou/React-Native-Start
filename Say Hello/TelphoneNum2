@@ -11,7 +11,7 @@ let Dimensions = require('Dimensions');//加载尺寸模块
 let totalWidth = Dimensions.get('window').width;//获取设备宽度
 let boxWidth = totalWidth * 0.6;
 
-export default class TelphoneNum extends Component {
+class TelphoneNum extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('Project0503', () => TelphoneNum);
+AppRegistry.registerComponent('Project001', () => TelphoneNum);
